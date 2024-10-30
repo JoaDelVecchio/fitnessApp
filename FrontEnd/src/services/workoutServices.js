@@ -13,7 +13,7 @@ const getAllWorkouts = () => {
 
 const createWorkout = (newWorkout) => {
   return axios
-    .post(`${baseUrl}/api/workouts`, newObject)
+    .post(`${baseUrl}/api/workouts`, newWorkout)
     .then((response) => response.data)
     .catch((error) => {
       console.error("Error creating new workout", error);
