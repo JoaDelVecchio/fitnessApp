@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseUrl = `${process.env.REACT_APP_BACKEND_URL}`;
+const baseUrl = "https://fitnessapp-nh5b.onrender.com";
+
 const getAllWorkouts = () => {
   return axios
     .get(`${baseUrl}/api/workouts`)
