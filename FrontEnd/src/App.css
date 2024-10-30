@@ -1,42 +1,189 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500&display=swap");
+
+/* Root Variables */
+:root {
+  --primary-bg-color: #1c1c1c;
+  --secondary-bg-color: #2b2b2b;
+  --primary-text-color: #f5f5f5;
+  --secondary-text-color: #c5c5c5;
+  --title-color: #f0f0f0;
+  --highlight-border-color: #3a3a3a;
+  --hover-border-color: #fff;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%; /* No height restrictions */
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 150px;
+}
+
+body {
+  display: block; /* Eliminamos cualquier flex para evitar restricciones */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  padding: 40px 20px;
   text-align: center;
+  margin: 0 auto; /* Centra el contenedor sin forzar altura */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Premium White Title Styling */
+.app-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+  color: var(--title-color);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin: 0;
+  padding: 20px 0 30px;
+  transition: color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.workout-item:hover ~ .app-title {
+  filter: blur(2px);
+}
+
+.loading-message {
+  font-size: 1.8rem;
+  color: #ccc;
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Workouts Wrapper */
+.workouts-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0;
+  margin: 0 auto;
+  align-items: flex-start; /* Asegura que los items estén alineados al inicio */
+}
+
+.workouts-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start; /* Evita que los elementos se estiren verticalmente */
+}
+
+/* Workout Item Styling */
+.workout-item {
+  width: 400px;
+  padding: 20px;
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--highlight-border-color);
+  transition: transform 0.3s, border 0.3s;
+  margin-bottom: 15px;
+  height: auto; /* Ajusta la altura al contenido */
+  display: block; /* Evita restricciones de altura y alineación */
+}
+
+.workout-item:hover {
+  transform: scale(1.03);
+  border: 1px solid var(--hover-border-color);
+}
+
+/* Header del Workout */
+.workout-header {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.workout-header h3 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.workout-header p {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+}
+
+/* Sección de Ejercicios */
+.exercises-section {
+  width: 100%;
+}
+
+.exercises-section h4 {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.exercises-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Item de Ejercicio */
+.exercise-item {
+  background-color: #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #b1b1b1;
+  width: 100%;
+}
+
+.exercise-item p {
+  margin: 4px 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+    padding: 15px 0 30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .workouts-list {
+    flex-direction: column;
+    align-items: center;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .workout-item {
+    width: 100%;
+    margin: 10px 0;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
