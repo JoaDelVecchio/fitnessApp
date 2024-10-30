@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = `${process.env.REACT_APP_BACKEND_URL}`;
 
 const getAllWorkouts = () => {
   return axios
-    .get(`${baseUrl}/api/workouts`)
+    .get(`${baseUrl}/workouts`)
     .then((response) => response.data)
     .catch((error) => {
       console.error("There was an error getting the workouts", error);
@@ -14,7 +14,7 @@ const getAllWorkouts = () => {
 
 const createWorkout = (newWorkout) => {
   return axios
-    .post(`${baseUrl}/api/workouts`, newObject)
+    .post(`${baseUrl}/workouts`, newObject)
     .then((response) => response.data)
     .catch((error) => {
       console.error("Error creating new workout", error);
@@ -23,7 +23,7 @@ const createWorkout = (newWorkout) => {
 };
 const updateWorkout = (id, newObject) => {
   return axios
-    .put(`${baseUrl}/api/workouts/${id}`, newObject)
+    .put(`${baseUrl}/workouts/${id}`, newObject)
     .then((response) => response.data)
     .catch((error) => {
       console.error("error updating workout", error);
@@ -33,10 +33,7 @@ const updateWorkout = (id, newObject) => {
 
 const updateExercise = (workoutId, exerciseId, newObject) => {
   return axios
-    .put(
-      `${baseUrl}/api/workouts/${workoutId}/exercises/${exerciseId}`,
-      newObject
-    )
+    .put(`${baseUrl}/workouts/${workoutId}/exercises/${exerciseId}`, newObject)
     .then((response) => response.data)
     .catch((error) => {
       console.error("error updating exercise", error);
