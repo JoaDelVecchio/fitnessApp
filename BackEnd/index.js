@@ -6,7 +6,12 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(
+  cors({
+    origin:
+      "https://dashboard.render.com/static/srv-csh8tqjqf0us73c0hm8g/events", // Replace with your actual frontend Render URL
+  })
+);
 
 let workouts = [
   {
