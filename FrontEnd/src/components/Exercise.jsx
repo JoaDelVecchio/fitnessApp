@@ -2,7 +2,7 @@ const Exercise = ({ exercise, exercisesInput, handleWeightReps }) => {
   return (
     <li className="exercise-item">
       <p>
-        <strong>Exercise:</strong> {exercise.name}
+        <strong>Ejercicio:</strong> {exercise.name}
       </p>
       <p>
         <strong>Sets:</strong> {exercise.sets}
@@ -11,11 +11,12 @@ const Exercise = ({ exercise, exercisesInput, handleWeightReps }) => {
         <strong>Reps:</strong> {exercise.reps}
       </p>
       <p>
-        <strong>Muscles Targeted:</strong> {exercise.musclesTargeted.join(", ")}
+        <strong>Músculos Trabajados:</strong>{" "}
+        {exercise.musclesTargeted.join(", ")}
       </p>
       <div>
         <p>
-          <strong>Weight/Reps done:</strong>
+          <strong>Peso/Reps:</strong>
           <input
             className="inputWeightReps"
             type="text"

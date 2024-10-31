@@ -9,7 +9,7 @@ const Workouts = ({ workouts, exercisesInput, handleWeightReps }) => {
             <div className="workout-header">
               <h3>{workout.name}</h3>
               <p>{workout.description}</p>
-              <p>Duration: {workout.duration}</p>
+              <p>Duración: {workout.duration}</p>
             </div>
             <div className="exercises-section">
               <h4>Exercises:</h4>
