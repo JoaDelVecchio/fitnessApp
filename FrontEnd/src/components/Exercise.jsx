@@ -1,4 +1,4 @@
-const Exercise = ({ exercise }) => {
+const Exercise = ({ exercise, exercisesInput, handleWeightReps }) => {
   return (
     <li className="exercise-item">
       <p>
@@ -13,6 +13,20 @@ const Exercise = ({ exercise }) => {
       <p>
         <strong>Muscles Targeted:</strong> {exercise.musclesTargeted.join(", ")}
       </p>
+      <div>
+        <p>
+          <strong>Weight/Reps done:</strong>
+          <input
+            className="inputWeightReps"
+            type="text"
+            value={
+              exercisesInput.find((input) => input.id === exercise.id)
+                .weightReps
+            }
+            onChange={(e) => handleWeightReps(e, exercise.id)}
+          />
+        </p>
+      </div>
     </li>
   );
 };

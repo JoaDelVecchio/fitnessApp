@@ -143,6 +143,22 @@ body {
 }
 
 /* Sección de Ejercicios */
+
+.inputWeightReps {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  width: 50px;
+  text-align: center;
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--highlight-border-color);
+  transition: transform 0.3s, border 0.3s;
+}
+
 .exercises-section {
   width: 100%;
 }

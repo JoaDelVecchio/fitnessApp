@@ -1,6 +1,6 @@
 import Exercises from "./Exercises";
 
-const Workouts = ({ workouts }) => {
+const Workouts = ({ workouts, exercisesInput, handleWeightReps }) => {
   return (
     <div className="workouts-wrapper">
       <ul className="workouts-list">
@@ -13,7 +13,11 @@ const Workouts = ({ workouts }) => {
             </div>
             <div className="exercises-section">
               <h4>Exercises:</h4>
-              <Exercises workout={workout} />
+              <Exercises
+                workout={workout}
+                exercisesInput={exercisesInput}
+                handleWeightReps={handleWeightReps}
+              />
             </div>
           </li>
         ))}
