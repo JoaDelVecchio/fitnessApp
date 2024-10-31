@@ -63,7 +63,7 @@ function App() {
   }, []);
 
   return loading ? (
-    <div className="loading-message">You will become a beast...</div>
+    <div className="loading-message">You will become a beast - Loading...</div>
   ) : (
     <div className="container">
       <header>
