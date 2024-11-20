@@ -63,11 +63,7 @@ function App() {
   }, []);
 
   return loading ? (
-<<<<<<< HEAD
     <div className="loading-message">Loading, please wait...</div>
-=======
-    <div className="loading-message">You will become a beast - Loading...</div>
->>>>>>> c69c3986fdba84cbd9ff85279a8c00aabd17f9d7
   ) : (
     <div className="container">
       <header>
